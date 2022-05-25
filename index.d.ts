@@ -1038,14 +1038,14 @@ declare module "crypto" {
       hash: string
     },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
 
-    verify(algorithm: { name: string}, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
+    verify(algorithm: { name: string }, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
   }
 
   interface crypto {
       subtle: subtle;
   }
 
-  function pem2ab(str: string): Uint8Arrayl
+  function pem2ab(str: string): Uint8Array;
 
   const crypto: crypto;
 
