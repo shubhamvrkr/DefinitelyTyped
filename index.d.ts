@@ -1034,7 +1034,8 @@ declare module "crypto" {
   interface subtle {
 
     importKey(format: string, keyData: Uint8Array, algorithm: {
-      name: string
+      name: string,
+      hash: string
     },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
 
     verify(algorithm: { name: string}, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
