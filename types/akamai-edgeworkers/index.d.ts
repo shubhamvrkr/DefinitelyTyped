@@ -1023,3 +1023,46 @@ declare module "url-search-params" {
         toString(): string;
     }
 }
+
+/**
+ * Query, add, and remove parameters from the query string.
+ */
+declare module "crypto" {
+
+  interface CryptoKey {}
+
+  interface subtle {
+
+    importKey(format: string, keyData: Uint8Array, algorithm: {
+      name: string
+    },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
+
+    verify(algorithm: { name: string}, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
+  }
+
+  interface crypto {
+      subtle: subtle;
+  }
+
+  function pem2ab(str: string): Uint8Arrayl
+
+  const crypto: crypto;
+
+  export { crypto, pem2ab};
+}
+
+/**
+ * Query, add, and remove parameters from the query string.
+ */
+declare module "base64" {
+  function atob(str:string): string;
+}
+
+/**
+ * Query, add, and remove parameters from the query string.
+ */
+declare module "encoding" {
+  class TextEncoder {
+    encode(input: string): Uint8Array;
+  }
+}
