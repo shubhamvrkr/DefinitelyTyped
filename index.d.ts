@@ -1033,12 +1033,17 @@ declare module "crypto" {
 
   interface subtle {
 
-    importKey(format: string, keyData: Uint8Array, algorithm: {
+    importKey(format: string, keyData: Uint8Array | ArrayBuffer, algorithm: {
       name: string,
-      hash: string
+      length: number
     },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
 
     verify(algorithm: { name: string }, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
+
+    encrypt(algorithm: { name: string, iv: ArrayBuffer, length: number}, key: CryptoKey, data: ArrayBuffer): Promise<ArrayBuffer>;
+
+    digest(algorithm: string, data: ArrayBuffer): Promise<ArrayBuffer>;
+
   }
 
   interface crypto {
