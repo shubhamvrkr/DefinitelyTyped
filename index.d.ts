@@ -1035,8 +1035,8 @@ declare module "crypto" {
 
     importKey(format: string, keyData: Uint8Array | ArrayBuffer, algorithm: {
       name: string,
-      length: number,
-      hash: string
+      length?: number,
+      hash?: string
     },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
 
     verify(algorithm: { name: string }, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
