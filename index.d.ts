@@ -1039,11 +1039,13 @@ declare module "crypto" {
       hash?: string
     },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
 
-    verify(algorithm: { name: string }, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array): Promise<boolean>;
+    verify(algorithm: { name: string }, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array | ArrayBuffer): Promise<boolean>;
 
     encrypt(algorithm: { name: string, iv: ArrayBuffer, length: number}, key: CryptoKey, data: ArrayBuffer): Promise<ArrayBuffer>;
 
     digest(algorithm: string, data: ArrayBuffer): Promise<ArrayBuffer>;
+
+    sign(algorithm: { name: string }, key: CryptoKey, data: ArrayBuffer): Promise<ArrayBuffer>;
 
   }
 
