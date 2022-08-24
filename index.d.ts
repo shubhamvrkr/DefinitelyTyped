@@ -1075,6 +1075,6 @@ declare module "encoding" {
     encode(input: string): Uint8Array;
   }
   class TextDecoder {
-    decode(buffer: ArrayBuffer|TypedArray|DataView, options:any ): string;
+    decode(buffer: ArrayBuffer | DataView, options:any ): string;
   }
 }
