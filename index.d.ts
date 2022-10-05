@@ -1060,21 +1060,37 @@ declare module "crypto" {
   export { crypto, pem2ab};
 }
 
-/**
- * Query, add, and remove parameters from the query string.
- */
-declare module "base64" {
-  function atob(str:string): string;
-}
-
-/**
- * Query, add, and remove parameters from the query string.
- */
 declare module "encoding" {
-  class TextEncoder {
+
+  export default class TextEncoder {
+    constructor();
     encode(input: string): Uint8Array;
   }
-  class TextDecoder {
+  export default class TextDecoder {
+    constructor();
     decode(buffer: ArrayBuffer | DataView, options:any ): string;
   }
+
+  class base64 {
+    decode(encodedData: string, outputFormat?: string): Uint8Array | string;
+  }
+
+  class base64url {
+    decode(encodedData: string, outputFormat?: string): Uint8Array | string;
+  }
+
+  class base16 {
+    decode(encodedData: string, outputFormat?: string): Uint8Array | string;
+  }
+
+  function atob(str:string): string;
+
+  function btoa(str:string): string;
+
+  const base64: base64;
+  const base64url: base64url;
+  const base16: base16;
+
+  export { atob, btoa, base64, base64url, base16 };
+
 }
