@@ -1072,15 +1072,15 @@ declare module "encoding" {
   }
 
   class base64 {
-    decode(encodedData: string, outputFormat?: string): Uint8Array | string;
+    static decode(encodedData: string, outputFormat?: string): Uint8Array | string;
   }
 
   class base64url {
-    decode(encodedData: string, outputFormat?: string): Uint8Array | string;
+    static decode(encodedData: string, outputFormat?: string): Uint8Array | string;
   }
 
   class base16 {
-    decode(encodedData: string, outputFormat?: string): Uint8Array | string;
+    static decode(encodedData: string, outputFormat?: string): Uint8Array | string;
   }
 
   function atob(str:string): string;
