@@ -1062,11 +1062,11 @@ declare module "crypto" {
 
 declare module "encoding" {
 
-  export default class TextEncoder {
+  class TextEncoder {
     constructor();
     encode(input: string): Uint8Array;
   }
-  export default class TextDecoder {
+  class TextDecoder {
     constructor();
     decode(buffer: ArrayBuffer | DataView, options:any ): string;
   }
@@ -1086,11 +1086,5 @@ declare module "encoding" {
   function atob(str:string): string;
 
   function btoa(str:string): string;
-
-  const base64: base64;
-  const base64url: base64url;
-  const base16: base16;
-
-  export { atob, btoa, base64, base64url, base16 };
 
 }
