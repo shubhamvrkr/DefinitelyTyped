@@ -1045,13 +1045,14 @@ declare module "crypto" {
     | 'deriveBits'
     | 'wrapKey'
     | 'unwrapKey';
-    
+
   interface subtle {
 
     importKey(format: string, keyData: Uint8Array | ArrayBuffer, algorithm: {
       name: string,
       length?: number,
-      hash?: string
+      hash?: string,
+      namedCurve?: string
     },extractable: boolean, keyUsages: Array<string>): Promise<CryptoKey>;
 
     verify(algorithm: { name: string , saltLength?: number, hash? : { name: string } }, key: CryptoKey, signature: ArrayBuffer, data: Uint8Array | ArrayBuffer): Promise<boolean>;
