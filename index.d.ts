@@ -1029,8 +1029,23 @@ declare module "url-search-params" {
  */
 declare module "crypto" {
 
-  interface CryptoKey {}
+  interface CryptoKey {
+    readonly type: string;
+    readonly extractable: boolean;
+    readonly algorithm: object;
+    readonly usages: Usages[];
+  }
 
+  type Usages =
+    | 'encrypt'
+    | 'decrypt'
+    | 'sign'
+    | 'verify'
+    | 'deriveKey'
+    | 'deriveBits'
+    | 'wrapKey'
+    | 'unwrapKey';
+    
   interface subtle {
 
     importKey(format: string, keyData: Uint8Array | ArrayBuffer, algorithm: {
