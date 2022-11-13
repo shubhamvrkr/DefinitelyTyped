@@ -1056,16 +1056,16 @@ declare module "url-search-params" {
 declare module "encoding" {
 
 
-    class TextEncoder {
+    export class TextEncoder {
       constructor();
       encode(input: string): Uint8Array;
     }
 
-    class TextDecoder {
+    export class TextDecoder {
       constructor();
       decode(buffer: ArrayBuffer | DataView, options:any ): string;
     }
-    
+
     /**
      * The atob() function takes a string of base64 encoded data and returns a decoded ASCII binary string.
      * @param encodedData Input data that needs to be decoded
